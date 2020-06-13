@@ -73,12 +73,12 @@ export default function updateBacklinks(
         }
       ]
     };
-    backlinksString = `## Backlinks\n${backlinks
+    backlinksString = `\n### Backlinks\n${backlinks
       .map(
         entry =>
           `* [[${entry.sourceTitle}]]\n${entry.context
             .map(
-              block => `\t* ${processor.stringify(block).replace(/\n.+/, "")}\n`
+              block => `\t* ${processor.stringify(block).replace(/\n.+/, "").replace(/\\\\/gi, "\\")}\n`
             )
             .join("")}`
       )

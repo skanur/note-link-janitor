@@ -23,7 +23,7 @@ export default function getBacklinksBlock(
     (node: UNIST.Node): node is MDAST.Heading =>
       is(node, {
         type: "heading",
-        depth: 2
+        depth: 3
       }) && is((node as MDAST.Heading).children[0], { value: "Backlinks" })
   );
   if (existingBacklinksNodeIndex === -1) {
